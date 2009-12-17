@@ -58,6 +58,7 @@
           <form action="/elections" method="post">
             <input type="hidden" name="election" value="{{ vote.election.key }}"/>
             <select name="vote">
+              <option value="">Select a Nominee from the list</option>
               {% for member in vote.eligible %}
               <option value="{{ member.key }}">{{ member.username }}</option>
               {% endfor %}

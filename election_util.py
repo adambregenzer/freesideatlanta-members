@@ -86,9 +86,9 @@ def Nominate(election, nominee, current_user):
     if current_user.key() in election.nominators:
         raise ElectionError('You can only nominate one person per election.')
 
-    now = datetime.datetime.now()
-    if not election.nominate_start < now < election.nominate_end:
-        raise ElectionDateError('Election is not accepting nominations.')
+    #now = datetime.datetime.now()
+    #if not election.nominate_start < now < election.nominate_end:
+    #    raise ElectionDateError('Election is not accepting nominations.')
 
     if _IsOfficerElection(election) and not member_util.IsActiveMember(nominee):
         raise NomineeError('Officers must be active Freeside members.')
